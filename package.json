@@ -1,12 +1,28 @@
 {
   "name": "nano-agent",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
+  "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "simple-git-hooks": "^2.14.0"
   },
   "peerDependencies": {
     "typescript": "^7"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bunx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "bun run lint",
+    "*": "oxfmt --no-error-on-unmatched-pattern"
   }
 }

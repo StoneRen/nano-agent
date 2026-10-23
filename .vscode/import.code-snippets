@@ -1,0 +1,22 @@
+{
+  "Import Statement": {
+    "prefix": "imp",
+    "body": ["import { ${2} } from '${1}'"],
+    "description": "Import statement",
+  },
+  "Import Type Statement": {
+    "prefix": "impt",
+    "body": ["import type { ${2} } from '${1}'"],
+    "description": "Import type statement",
+  },
+  "Export From": {
+    "prefix": "exp",
+    "body": ["export { ${2} } from '${1}';"],
+    "description": "Re-export named export",
+  },
+  "Export All": {
+    "prefix": "exa",
+    "body": ["export * from '${1}';"],
+    "description": "Export all",
+  },
+}
